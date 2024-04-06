@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scan Results</title>
+</head>
+<body>
+    <h1>Scan Results for {{ ip_address }}</h1>
+    {% if open_ports %}
+        <p>Open ports:</p>
+        <ul>
+            {% for port in open_ports %}
+                <li>Port {{ port }} is open</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>{{ message }}</p>
+    {% endif %}
+</body>
+</html>
